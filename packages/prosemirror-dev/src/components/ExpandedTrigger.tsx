@@ -1,6 +1,6 @@
 import React, { memo } from "react";
 import styles from "./index.module.scss";
-import { toolsDomain } from "../domain";
+import { toolsDomain } from "../common";
 
 const ExpandedTrigger = () => {
   const handleOpenEvt = () => toolsDomain.set({ isOpen: true });

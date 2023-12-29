@@ -3,7 +3,7 @@ import { Node } from "prosemirror-model";
 
 import styles from "./index.module.scss";
 import BlockContents from "./BlockContents";
-import { toolsDomain } from "../../../domain";
+import { toolsDomain } from "../../../common";
 
 type BlockNodeProps = {
   node: Node;

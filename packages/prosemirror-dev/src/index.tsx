@@ -6,8 +6,8 @@ import { EditorState, Transaction } from "prosemirror-state";
 import "./styles/global.css";
 import DevTools from "./components";
 import { ViewTool } from "./types";
-import { subscribeOnHandler } from "./utils";
-import { DEVTOOLS_ID_NAME, toolsDomain, ToolSlotFn } from "./domain";
+import { subscribeOnHandler } from "./utility";
+import { DEVTOOLS_ID_NAME, toolsDomain, ToolSlotFn } from "./common";
 
 const dispatchHandler = (id: number, tr: Transaction, newState: EditorState) => {
   const { view, isOpen } = toolsDomain.state;

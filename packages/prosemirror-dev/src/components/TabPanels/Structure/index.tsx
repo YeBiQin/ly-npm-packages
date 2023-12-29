@@ -4,7 +4,7 @@ import { EditorState } from "prosemirror-state";
 
 import styles from "./index.module.scss";
 import BlockNode from "./BlockNode";
-import { TabKeys, toolsDomain, useToolsDomain } from "../../../domain";
+import { TabKeys, toolsDomain, useToolsDomain } from "../../../common";
 import NodeDetail from "./NodeDetail";
 
 type ContainerProps = {

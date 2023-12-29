@@ -2,7 +2,7 @@ import React, { memo, useEffect } from "react";
 import { JSONTree } from "react-json-tree";
 
 import { jsonTheme } from "../../../styles";
-import { useToolsDomain } from "../../../domain";
+import { useToolsDomain } from "../../../common";
 
 let timer: any;
 let activeElement: HTMLElement;

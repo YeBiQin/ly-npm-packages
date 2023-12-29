@@ -4,7 +4,7 @@ import styles from "./index.module.scss";
 import TabItem from "./TabItem";
 import { TabStructure } from "./TabPanels";
 import PanelSelector from "./PanelSelector";
-import { TabKeys, toolsDomain } from "../domain";
+import { TabKeys, toolsDomain } from "../common";
 
 const TABS_CONFIG = [
   {

@@ -1,7 +1,7 @@
 import { EditorState, Transaction } from "prosemirror-state";
 
 import { ViewTool } from "../types";
-import { toolsDomain } from "../domain";
+import { toolsDomain } from "../common";
 
 type DestroyCallback = (id: number) => void;
 

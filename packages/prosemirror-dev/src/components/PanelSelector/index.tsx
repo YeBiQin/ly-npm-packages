@@ -1,7 +1,7 @@
 import React, { memo, useCallback, useEffect, useState } from "react";
 
 import styles from "./index.module.scss";
-import { toolsDomain, useToolsDomain } from "../../domain";
+import { toolsDomain, useToolsDomain } from "../../common";
 
 const PanelSelector = () => {
   const view = useToolsDomain((state) => state.view);
