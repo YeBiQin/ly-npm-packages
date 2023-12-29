@@ -1,29 +1,19 @@
-// 将主题对象转化为CSS变量
-export const convertToCssVars = (customTheme: any) => {
-  const theme = customTheme;
+export function flattenTokens(themeSpec: any) {
+  const themeTokens: any = {};
 
-  const flatTokens = flattenTokens(theme);
-  console.log(
-    "%c >>>>> flatTokens -6",
-    "font-size:13px; background:pink; color:#000;",
-    flatTokens
-  );
-
-  return theme;
-};
-
-// -------------------------------------
-export function flattenTokens(theme: any) {
-  const result: any = {};
-
-  walkObject(theme, (value, path) => {
+  const themeCSSVars = walkObject(themeSpec, (value, paths) => {
     if (value == null) return;
-    result[path.join(".")] = value;
+
+    const token = paths.join("-");
+
+    const cssVar = `--${token}`;
+    themeTokens[cssVar] = value;
+
+    return `var(${cssVar})`;
   });
 
-  return result;
+  return { themeTokens, themeCSSVars };
 }
-// -------------------------------------
 
 const isObject = (value: Record<string, any>) => {
   return typeof value === "object" && value != null && !Array.isArray(value);
@@ -31,7 +21,6 @@ const isObject = (value: Record<string, any>) => {
 
 type Predicate<R = any> = (value: any, path: string[]) => R;
 
-// 扁平化样式对象
 export const walkObject = <T, K>(target: T, predicate: Predicate<K>) => {
   function inner(value: any, path: string[] = []): any {
     if (isObject(value) || Array.isArray(value)) {

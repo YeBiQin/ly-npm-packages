@@ -1,7 +1,7 @@
-import { ThemeDemo } from "./_components";
+"use client";
 
 function HomePage() {
-  return <ThemeDemo>测试</ThemeDemo>;
+  return <div>首页</div>;
 }
 
 export default HomePage;
