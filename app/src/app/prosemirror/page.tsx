@@ -1,9 +1,8 @@
 "use client";
+import { DocumentEditor } from "@ly/prosemirror";
+import React, { memo } from "react";
 
-import { DocumentEditor } from "@/module";
-import React, { useState } from "react";
-
-const PerformanceStylePage = () => {
+const ProsemirrorPage = () => {
   return (
     <div>
       <DocumentEditor />
@@ -11,4 +10,4 @@ const PerformanceStylePage = () => {
   );
 };
 
-export default PerformanceStylePage;
+export default memo(ProsemirrorPage);

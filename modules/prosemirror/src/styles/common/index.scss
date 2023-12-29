@@ -1,0 +1,27 @@
+@import "./plugin-dragger.scss";
+@import "./node-block_ai.scss";
+@import "./view-handler.scss";
+@import "./plugin-interaction.scss";
+
+:where(.block_item) {
+  border: 1.5px solid transparent;
+  padding: 6px;
+  position: relative;
+  transition: border-color 0.15s;
+  border-radius: 4px;
+
+  .block_content {
+    flex: 1;
+    position: relative;
+    min-height: 1.5em;
+    line-height: 1.5em;
+  }
+
+  // 节点缩进样式
+  &[indent="1"] {
+    margin-left: 2em;
+  }
+  &[indent="2"] {
+    margin-left: 4em;
+  }
+}
