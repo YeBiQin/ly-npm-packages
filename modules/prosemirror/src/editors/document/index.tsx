@@ -20,9 +20,7 @@ import {
   documentDomain,
 } from "@ly/prosemirror";
 import { initDocumentKeymap } from "./keymap";
-import { initDeveloperTools } from "laoye-prosemirror-dev";
-
-const registerDevTool = initDeveloperTools();
+import { initDeveloperTool } from "laoye-prosemirror-dev";
 
 interface EditorProps extends HTMLAttributes<HTMLDivElement> {}
 
@@ -59,8 +57,8 @@ export const DocumentEditor = memo((props: EditorProps) => {
       },
     });
 
-    // unmountedTool.current = applyDevTools(editorView);
-    registerDevTool(editorView);
+    initDeveloperTool(editorView);
+    unmountedTool.current = applyDevTools(editorView);
   });
 
   useMount(() => {

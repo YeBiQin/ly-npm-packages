@@ -1,16 +1,16 @@
 export const nodeTheme = [
-  "#E7D2F2", // 浅淡紫
-  "#D4D1F2", // 浅淡蓝紫
-  "#D7EAF7", // 浅淡蓝
-  "#CDECF0", // 浅淡蓝绿
-  "#C0EAD7", // 浅淡绿
-  "#E3F9D2", // 浅淡黄绿
-  "#FFFCE5", // 浅淡黄
-  "#FFF1D1", // 浅淡橙黄
-  "#FFDFC0", // 浅淡橙
-  "#FDD0C1", // 浅淡橙红
-  "#F5D3D4", // 浅淡红
-  "#F4DAE9", // 浅淡紫红
+  "#ceb9d9",
+  "#bbb8d9",
+  "#bed1de",
+  "#b4d3d7",
+  "#a7d1be",
+  "#cae0b9",
+  "#e6e3cc",
+  "#e6d8b8",
+  "#e6c6a7",
+  "#e4b7a8",
+  "#dcbabb",
+  "#dbc1d0",
 ];
 
 export const jsonTheme = {
@@ -31,33 +31,4 @@ export const jsonTheme = {
   base0D: "#89DCEB",
   base0E: "#CBA6F7",
   base0F: "#FAB387",
-};
-
-export const mainTheme = {
-  main: "#CBA6F7",
-  main20: "rgba(203, 166, 247, .2)",
-  main40: "rgba(203, 166, 247, .4)",
-  main60: "rgba(203, 166, 247, .6)",
-  main80: "rgba(203, 166, 247, .8)",
-  main90: "rgba(203, 166, 247, .9)",
-  mainBg: "#1E1E2E",
-  softerMain: "#B4BEFE",
-
-  white: "#fff",
-
-  text: "#CDD6F4",
-  white05: "rgba(205, 214, 244, .05)",
-  white10: "rgba(205, 214, 244, .1)",
-  white20: "rgba(205, 214, 244, .2)",
-  white60: "rgba(205, 214, 244, .6)",
-  white80: "rgba(205, 214, 244, .8)",
-
-  black30: "#11111B",
-
-  // For diffs and structure
-  darkGreen: "#A6E3A1",
-  lightPink: "#F38BA8",
-  lightYellow: "rgba(205, 214, 244, .2)",
-
-  syntax: jsonTheme,
 };

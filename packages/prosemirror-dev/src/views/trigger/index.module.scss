@@ -1,0 +1,21 @@
+.collapsed_button {
+  color: white;
+  right: 20px;
+  bottom: 70px;
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  font-size: 24px;
+  transition: all 0.15s;
+  box-shadow: 0px 0px 4px #2a2c2f;
+  border-radius: 100%;
+  background-color: #2a2c2f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:hover {
+    box-shadow: 0px 0px 10px #3a3c3f;
+    background-color: #3a3c3f;
+  }
+}

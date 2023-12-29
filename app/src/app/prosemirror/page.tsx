@@ -4,7 +4,7 @@ import React, { memo } from "react";
 
 const ProsemirrorPage = () => {
   return (
-    <div>
+    <div style={{ height: "100%", overflowX: "hidden" }}>
       <DocumentEditor />
     </div>
   );

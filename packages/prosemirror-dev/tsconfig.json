@@ -1,5 +1,5 @@
 {
-  "include": ["src"],
+  "include": ["./"],
   "compilerOptions": {
     "jsx": "react",
     "baseUrl": "./src",
@@ -28,7 +28,7 @@
 
     /* Import Path */
     "paths": {
-      "@/*": ["./src/*"]
+      "laoye-prosemirror-dev/*": ["./src/*"]
     }
   }
 }
