@@ -13,11 +13,14 @@ const createToolComponent = () => {
   ReactDOM.render(<PMDeveloperTool />, container);
 };
 
-export const initDeveloperTool = (editorView: EditorView) => {
+export const initDeveloperTool = (
+  editorView: EditorView,
+  editorName = Date.now().toString()
+) => {
   const element = document.getElementById(DEVTOOLS_ID_NAME);
   if (!element) createToolComponent();
 
   subscribeOnHandler(editorView);
 
-  toolStore.getState().subscribeEditor(editorView);
+  toolStore.getState().subscribeEditor(editorView, editorName);
 };
