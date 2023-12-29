@@ -30,8 +30,8 @@ function generateClassName(length = 8) {
 // 这个类的作用是实现一个系统设计的功能，可以根据主题规范和CSS对象动态生成和应用样式
 class SystemDesign {
   // 定义两个私有的属性，分别是用于存放主题样式和类名样式的style标签元素
-  private themeStyle: HTMLElement;
-  private classesStyle: HTMLElement;
+  themeStyle: HTMLElement;
+  classesStyle: HTMLElement;
 
   // 定义一个映射，用于缓存已经生成的类名和对应的CSS键值对
   classesMap: Map<string, string> = new Map();

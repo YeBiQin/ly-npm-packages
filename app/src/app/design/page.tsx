@@ -1,9 +1,24 @@
 "use client";
 
-import { design } from "laoye-react-component_design";
-import React, { useState } from "react";
+import classNames from "classnames";
+import {
+  design,
+  ComponentAttributes,
+  useStylesClassnames,
+} from "laoye-react-component_design";
+import { useState } from "react";
 
-const myArray = Array.from({ length: 1000 });
+interface ElementProps extends ComponentAttributes {}
+
+const Element = (props: ElementProps) => {
+  const { css, className, children, ...others } = props;
+  const stylesClassname = useStylesClassnames(css);
+  return (
+    <div className={classNames(stylesClassname, className)} {...others}>
+      {children}
+    </div>
+  );
+};
 
 const UserItem = () => {
   const [active, setActive] = useState(false);
@@ -11,8 +26,8 @@ const UserItem = () => {
   const handleClickEvt = () => setActive(!active);
 
   return (
-    <div
-      style={{
+    <Element
+      css={{
         gap: design.gap.medium,
         color: design.color.gray[90],
         cursor: "pointer",
@@ -26,32 +41,26 @@ const UserItem = () => {
       }}
       onClick={handleClickEvt}
     >
-      <div
-        style={{
+      <Element
+        css={{
           color: "white",
-          width: "42px",
-          height: "42px",
+          width: "32px",
+          height: "32px",
           display: "flex",
+          fontSize: "12px",
           alignItems: "center",
           borderRadius: "100%",
           justifyContent: "center",
           backgroundColor: design.color.blue[60],
         }}
       >
-        属性
-      </div>
+        组件
+      </Element>
 
-      <div>
-        <div style={{ gap: design.gap.medium, display: "flex", alignItems: "end" }}>
-          <div>BiQin Ye</div>
-          <div style={{ color: design.color.gray[60], fontSize: "12px" }}>
-            biqin.ye@qq.com
-          </div>
-        </div>
-
-        <div>这是一个简单的自我介绍～</div>
-      </div>
-    </div>
+      <Element css={{ gap: design.gap.medium, display: "flex", alignItems: "center" }}>
+        BiQin Ye
+      </Element>
+    </Element>
   );
 };
 
@@ -67,9 +76,7 @@ const PerformanceStylePage = () => {
         flexDirection: "column",
       }}
     >
-      {myArray.map((value, index) => (
-        <UserItem key={index} />
-      ))}
+      <UserItem />
     </div>
   );
 };
