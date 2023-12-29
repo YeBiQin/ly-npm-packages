@@ -2,7 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { EditorView } from "prosemirror-view";
 
-import "./styles/global.css";
 import { PMDeveloperTool } from "./views";
 import { subscribeOnHandler } from "./core";
 import { DEVTOOLS_ID_NAME, toolStore } from "..";
