@@ -4,6 +4,7 @@ import styles from "./index.module.scss";
 import { toolStore, useToolStore } from "../../../..";
 
 const TabSelector = () => {
+  const editorMap = useToolStore((state) => state.editorMap);
   const editorView = useToolStore((state) => state.editorView);
   const editorList = useToolStore((state) => state.editorList);
   const switchEditor = useToolStore((state) => state.switchEditor);
@@ -39,14 +40,16 @@ const TabSelector = () => {
   return (
     <div className={styles.selector}>
       <div className={styles.selector_value} onMouseDown={handleToggleVisible}>
-        <span className={styles.selected_id}>选择编辑器</span>
+        <span className={styles.selected_id}>
+          {editorView ? editorMap.get(editorView) : "未知编辑器"}
+        </span>
       </div>
 
       {visible && (
         <div className={styles.selector_options} onMouseDownCapture={handleSelectOption}>
           {editorList?.map((editor, index) => (
             <div className={styles.option_item} key={index} data-index={index}>
-              编辑器{index + 1}
+              {editorMap.get(editor) ?? `编辑器${index + 1}`}
             </div>
           ))}
         </div>

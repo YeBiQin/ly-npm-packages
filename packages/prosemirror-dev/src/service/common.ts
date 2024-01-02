@@ -1,9 +1,8 @@
 import { EditorView } from "prosemirror-view";
 import { StateCreator } from "zustand";
-import { getKeyByValue } from "../..";
 
 interface SliceState {
-  editorMap: Map<string, EditorView>;
+  editorMap: Map<EditorView, string>;
   editorList: EditorView[];
 }
 
@@ -22,15 +21,16 @@ export const createCommonSlice: StateCreator<CommonSlice> = (set, get) => ({
   ...initState(),
   subscribeEditor(editorView, editorName) {
     const { editorMap, editorList } = get();
-    editorMap.set(editorName, editorView);
+    editorMap.set(editorView, editorName);
     set({ editorList: [...editorList, editorView] });
   },
   unsubscribeEditor(editorView) {
     const { editorMap, editorList } = get();
 
-    const editorKey = getKeyByValue(editorMap, editorView);
-    if (editorKey) editorMap.delete(editorKey);
+    // 移除编辑器映射名单
+    editorMap.delete(editorView);
 
+    // 移除编辑器列表项
     const newEditorList = editorList.filter((editor) => editor !== editorView);
     set({ editorMap: new Map(editorMap), editorList: newEditorList });
   },

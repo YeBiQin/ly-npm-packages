@@ -57,7 +57,7 @@ export const DocumentEditor = memo((props: EditorProps) => {
       },
     });
 
-    initDeveloperTool(editorView, "document");
+    initDeveloperTool(editorView, "文档编辑器");
     unmountedTool.current = applyDevTools(editorView);
   });
 
