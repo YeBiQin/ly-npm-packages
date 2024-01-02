@@ -26,9 +26,7 @@ function replaceDispatchFn(editorView: EditorView) {
   const handleDispatch = function (tr: Transaction) {
     dispatch(tr);
 
-    if (tr.docChanged && toolStore.getState().isOpen) {
-      toolStore.getState().dispatchEditor(editorView);
-    }
+    if (toolStore.getState().isOpen) toolStore.getState().dispatchEditor(editorView);
   };
 
   if (maybeDispatchTransaction) {

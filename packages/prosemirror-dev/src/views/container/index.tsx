@@ -3,10 +3,10 @@ import styles from "./index.module.scss";
 import TabClose from "./TabClose";
 import TabSelector from "./TabSelector";
 import { TAB_MENU } from "../../..";
-import { TabStructure } from "./TabPanels";
 import { Tab, TabList, TabPanel, Tabs } from "../../components";
 
 import { PanelState } from "./PanelState";
+import { PanelStructure } from "./PanelStructure";
 
 const ToolContainer = () => {
   return (
@@ -28,7 +28,7 @@ const ToolContainer = () => {
         </div>
 
         <TabPanel className={styles.container_content}>
-          <TabStructure />
+          <PanelStructure />
           <PanelState />
         </TabPanel>
       </div>

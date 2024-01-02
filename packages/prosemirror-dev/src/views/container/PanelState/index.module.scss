@@ -1,0 +1,29 @@
+.container {
+  height: 100%;
+  display: flex;
+  .container_left {
+    flex: 1;
+    width: max-content;
+    height: 100%;
+    overflow-x: hidden;
+  }
+
+  .container_right {
+    flex: none;
+    width: 240px;
+    height: 100%;
+    overflow-x: hidden;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .section {
+    padding: 12px 16px;
+  }
+
+  .content {
+    padding-top: 8px;
+    & > ul {
+      margin: 0px !important;
+    }
+  }
+}
