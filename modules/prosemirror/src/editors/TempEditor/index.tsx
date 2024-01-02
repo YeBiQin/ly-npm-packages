@@ -1,5 +1,4 @@
-import React, { HTMLAttributes, memo, useRef } from "react";
-import { history } from "prosemirror-history";
+import React, { HTMLAttributes, memo, useRef, useState } from "react";
 import { EditorView } from "prosemirror-view";
 import { EditorState } from "prosemirror-state";
 import { useMemoizedFn, useMount, useUnmount } from "ahooks";
@@ -10,27 +9,20 @@ import initMockData from "./tests/init.mock";
 // import textMock from "./tests/document.mock";
 import initDocumentSchema from "./schema";
 
-import {
-  PMStyles,
-  assembleNodeViews,
-  commonDraggerPlugin,
-  commonKeymapPlugin,
-  commonUIInteractionPlugin,
-  documentController,
-  documentDomain,
-} from "@ly/prosemirror";
-import { initDocumentKeymap } from "./keymap";
+import { PMStyles, assembleNodeViews } from "@ly/prosemirror";
 import { initDeveloperTool } from "laoye-prosemirror-dev";
 
 interface EditorProps extends HTMLAttributes<HTMLDivElement> {
   name: string;
 }
 
-export const DocumentEditor = memo((props: EditorProps) => {
+export const TempEditor = memo((props: EditorProps) => {
   const { name, children } = props;
 
   const mountedRef = useRef<HTMLDivElement>(null);
   const unmountedTool = useRef<any>(null);
+
+  const [editorView, setEditorView] = useState<EditorView>();
 
   /** 创建编辑器视图 */
   const createEditorView = useMemoizedFn((doc: any) => {
@@ -39,13 +31,6 @@ export const DocumentEditor = memo((props: EditorProps) => {
     const editorState = EditorState.create({
       doc: schema.nodeFromJSON(doc),
       schema: schema,
-      plugins: [
-        history(),
-        commonKeymapPlugin(initDocumentKeymap()),
-        commonDraggerPlugin(),
-        commonUIInteractionPlugin(),
-        documentController(),
-      ],
     });
 
     const editorView = new EditorView(mountedRef.current, {
@@ -59,6 +44,7 @@ export const DocumentEditor = memo((props: EditorProps) => {
       },
     });
 
+    setEditorView(editorView);
     initDeveloperTool(editorView, name);
     unmountedTool.current = applyDevTools(editorView);
   });
@@ -69,8 +55,8 @@ export const DocumentEditor = memo((props: EditorProps) => {
   });
 
   useUnmount(() => {
+    editorView?.destroy();
     unmountedTool?.current?.();
-    documentDomain.getState()?.destroyDocument?.();
   });
 
   return (
