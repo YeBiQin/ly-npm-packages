@@ -5,3 +5,4 @@ export * from "./utility";
 export * from "./service";
 export * from "./views";
 export * from "./entrance";
+export * from "./components";

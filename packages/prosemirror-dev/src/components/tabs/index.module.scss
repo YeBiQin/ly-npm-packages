@@ -1,4 +1,4 @@
-.tab_item {
+.tab {
   cursor: pointer;
   position: relative;
   font-size: 16px;
@@ -11,4 +11,9 @@
     color: white;
     font-weight: 700;
   }
+}
+
+.tab_list {
+  gap: 24px;
+  display: flex;
 }

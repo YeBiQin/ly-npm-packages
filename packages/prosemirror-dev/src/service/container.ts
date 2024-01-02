@@ -1,13 +1,14 @@
 import { StateCreator } from "zustand";
+import { TabKeyEnum } from "../shared";
 
 interface SliceState {
   isOpen: boolean;
-  activeTab: number;
+  activeTab: any;
 }
 
 const initState = (): SliceState => ({
   isOpen: false,
-  activeTab: 0,
+  activeTab: TabKeyEnum.Structure,
 });
 
 export interface ContainerSlice extends SliceState {
