@@ -16,6 +16,7 @@
     color: rgb(187, 145, 163);
     width: max-content;
     font-size: 13px;
+    line-height: 23px;
   }
 
   .heading_output {
@@ -23,8 +24,8 @@
     color: rgba(255, 255, 255, 0.6);
     width: max-content;
     cursor: pointer;
-    padding: 3px 6px;
-    font-size: 12px;
+    padding: 1px 6px;
+    font-size: 11px;
     border-radius: 3px;
     &:hover {
       color: white;

@@ -10,7 +10,7 @@ export const Heading = (props: HeadingProps) => {
   const { children, output } = props;
 
   const handleClick = () => {
-    console.log("%c >>>>> 打印数据", output);
+    console.log(">>>>> 打印数据", output);
   };
 
   return (

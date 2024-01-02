@@ -14,7 +14,7 @@ export const PanelState = () => {
     <div className={styles.container}>
       <div className={styles.container_left}>
         <div className={styles.section}>
-          <Heading>视图状态</Heading>
+          <Heading output={doc}>视图状态</Heading>
           <div className={styles.content}>
             <JSONTree
               hideRoot
@@ -28,7 +28,7 @@ export const PanelState = () => {
 
       <div className={styles.container_right}>
         <div className={styles.section}>
-          <Heading output={selection.toJSON()}>选区信息</Heading>
+          <Heading output={selection}>选区信息</Heading>
           <div className={styles.content}>
             <JSONTree
               hideRoot
