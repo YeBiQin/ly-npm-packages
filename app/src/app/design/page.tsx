@@ -2,7 +2,7 @@
 
 import classNames from "classnames";
 import {
-  design,
+  theme,
   ComponentAttributes,
   useStylesClassnames,
 } from "laoye-react-component_design";
@@ -28,16 +28,16 @@ const UserItem = () => {
   return (
     <Element
       css={{
-        gap: design.gap.medium,
-        color: design.color.gray[90],
+        gap: theme.gap.medium,
+        color: theme.color.gray[90],
         cursor: "pointer",
         display: "flex",
-        padding: design.padding.medium,
-        borderRadius: design.radius.medium,
-        backgroundColor: active ? design.color.blue[5] : design.color.gray[10],
+        padding: theme.padding.medium,
+        borderRadius: theme.radius.medium,
+        backgroundColor: active ? theme.color.blue[5] : theme.color.gray[10],
         borderWidth: "1px",
         borderStyle: "solid",
-        borderColor: active ? design.color.blue[30] : "transparent",
+        borderColor: active ? theme.color.blue[30] : "transparent",
       }}
       onClick={handleClickEvt}
     >
@@ -51,13 +51,13 @@ const UserItem = () => {
           alignItems: "center",
           borderRadius: "100%",
           justifyContent: "center",
-          backgroundColor: design.color.blue[60],
+          backgroundColor: theme.color.blue[60],
         }}
       >
         组件
       </Element>
 
-      <Element css={{ gap: design.gap.medium, display: "flex", alignItems: "center" }}>
+      <Element css={{ gap: theme.gap.medium, display: "flex", alignItems: "center" }}>
         BiQin Ye
       </Element>
     </Element>
