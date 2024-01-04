@@ -17,6 +17,7 @@
     "laoye-react-hooks": "workspace:*",
     "laoye-prosemirror-dev": "workspace:*",
     "laoye-prosemirror-utils": "workspace:*",
+    "laoye-react-component": "workspace:*",
     "laoye-react-component_design": "workspace:*"
   },
   "devDependencies": {

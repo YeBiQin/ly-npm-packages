@@ -1,0 +1,37 @@
+{
+  "name": "laoye-react-component",
+  "author": "BiQin Ye",
+  "license": "ISC",
+  "version": "1.0.0",
+  "description": "碧钦的 React 组件库",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./",
+  "main_dist": "./dist/my-lib.umd.cjs",
+  "module": "./dist/my-lib.js",
+  "exports": {
+    ".": {
+      "import": "./",
+      "types": "./dist/index.d.ts",
+      "import_dist": "./dist/index.js",
+      "require": "./dist/index.umd.cjs"
+    }
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && tsc",
+    "preview": "vite preview",
+    "start:publish": "npm run build && npm publish"
+  },
+  "dependencies": {
+    "laoye-react-component_design": "workspace:*"
+  },
+  "devDependencies": {
+    "vite": "^4.4.5",
+    "typescript": "^5.0.2",
+    "rollup-plugin-visualizer": "^5.9.2"
+  },
+  "peerDependencies": {}
+}

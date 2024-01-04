@@ -10,6 +10,7 @@ const nextConfig = {
     "laoye-react-hooks",
     "laoye-prosemirror-dev",
     "laoye-prosemirror-utils",
+    "laoye-react-component",
     "laoye-react-component_design",
   ],
 };

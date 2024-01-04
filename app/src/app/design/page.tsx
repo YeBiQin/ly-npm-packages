@@ -6,19 +6,8 @@ import {
   ComponentAttributes,
   useStylesClassnames,
 } from "laoye-react-component_design";
-import { useState } from "react";
-
-interface ElementProps extends ComponentAttributes {}
-
-const Element = (props: ElementProps) => {
-  const { css, className, children, ...others } = props;
-  const stylesClassname = useStylesClassnames(css);
-  return (
-    <div className={classNames(stylesClassname, className)} {...others}>
-      {children}
-    </div>
-  );
-};
+import { Element } from "laoye-react-component";
+import { AllHTMLAttributes, CSSProperties, useState } from "react";
 
 const UserItem = () => {
   const [active, setActive] = useState(false);
@@ -60,42 +49,6 @@ const UserItem = () => {
       <Element css={{ gap: theme.gap.medium, display: "flex", alignItems: "center" }}>
         BiQin Ye
       </Element>
-    </Element>
-  );
-};
-
-const Demo = () => {
-  return (
-    <Element
-      css={{
-        cursor: "pointer",
-        display: "flex",
-        gap: theme.gap.medium,
-        color: theme.color.gray[90],
-        padding: theme.padding.medium,
-        borderRadius: theme.radius.medium,
-        backgroundColor: theme.color.blue[60],
-      }}
-    >
-      测试内容
-    </Element>
-  );
-};
-
-const Demo1 = () => {
-  return (
-    <Element
-      css={{
-        cursor: "pointer",
-        display: "flex",
-        gap: "medium",
-        color: "gray.90",
-        padding: "medium",
-        borderRadius: "medium",
-        backgroundColor: "blue.60",
-      }}
-    >
-      测试内容
     </Element>
   );
 };
