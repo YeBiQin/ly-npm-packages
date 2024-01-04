@@ -64,6 +64,42 @@ const UserItem = () => {
   );
 };
 
+const Demo = () => {
+  return (
+    <Element
+      css={{
+        cursor: "pointer",
+        display: "flex",
+        gap: theme.gap.medium,
+        color: theme.color.gray[90],
+        padding: theme.padding.medium,
+        borderRadius: theme.radius.medium,
+        backgroundColor: theme.color.blue[60],
+      }}
+    >
+      测试内容
+    </Element>
+  );
+};
+
+const Demo1 = () => {
+  return (
+    <Element
+      css={{
+        cursor: "pointer",
+        display: "flex",
+        gap: "medium",
+        color: "gray.90",
+        padding: "medium",
+        borderRadius: "medium",
+        backgroundColor: "blue.60",
+      }}
+    >
+      测试内容
+    </Element>
+  );
+};
+
 const PerformanceStylePage = () => {
   return (
     <div
